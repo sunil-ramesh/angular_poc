@@ -1,0 +1,253 @@
+<nav class="navbar navbar-default nav-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">Logo</a>
+    </div>
+    <ul class="nav navbar-nav navbar-nav-custom">
+      <li ><a href="">Welcome!</a></li>
+      <!-- <li><a href="">Invest</a></li> -->
+      <!-- <li><a href="">About us</a></li> -->
+    </ul>
+  </div>
+</nav>
+
+
+<div>
+  <flash-message name="flash-fixed" class="text-center"></flash-message>
+  <div class="personal-head-text">Please provide your presonal information</div>
+  <div class="container">
+    <div class="margin-botton-personal">
+
+      <form class="form-validate" role="form" name="PersonalCtrl.personalinfoForm" novalidate="" ng-submit="psn.personalinfo()" >
+
+        <div class="row">
+          <div class="form-group">
+            <div class="col-sm-4">
+              <input autocomplete="off" autofocus="autofocus" id="firstname" name="person_first_name" class="form-control" placeholder="First Name" type="text" maxlength="255" ng-model="psn.personalinfoForm.first_name" required />
+              <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.person_first_name.$error.required && psn.submitted">This field is required</span>
+            </div>
+
+            <div class="col-sm-4">
+              <input autocomplete="off" autofocus="autofocus" id="middlename" name="person_middle_name" class="form-control" placeholder="Middle Name" type="text" maxlength="255" ng-model="psn.personalinfoForm.middleName">
+            </div>
+
+            <div class="col-sm-4">
+              <input autocomplete="off" autofocus="autofocus" id="lastname" name="person_last_name" class="form-control" placeholder="Last Name" type="text" maxlength="255" ng-model="psn.personalinfoForm.last_name" required />
+              <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.person_last_name.$error.required && psn.submitted">This field is required</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="field-spacing">
+          <div class="row">
+            <div class="form-group">
+              <div class="col-sm-8">
+                <input class="form-control" id="exampleEmail" type="email" name="person_email" placeholder="Enter email" autocomplete="off" ng-disabled="true" ng-model="psn.personalinfoForm.email"/>
+                <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.person_email.$error.required && psn.submitted">This field is required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-spacing">
+          <div class="row">
+            <div class="form-group">
+              <div class="col-sm-8">
+                <input class="form-control" id="examplessn" type="text" name="person_ssn" placeholder="Social Security Number" ui-mask-placeholder="" autocomplete="off" ng-model="psn.personalinfoForm.ssn" ui-mask="999-99-9999" required />
+                <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.person_ssn.$error.required && psn.submitted">This field is required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-spacing">
+          <div class="row">
+            <div class="form-group">
+              <div class="col-sm-4">
+                <input class="form-control" id="exampledateofbirth" type="text" name="person_data_of_birth" placeholder="Date of Birth (MM/DD/YYYY)" ui-mask-placeholder="" ui-mask="99/99/9999" model-view-value="true" autocomplete="off" ng-model="psn.personalinfoForm.dob" required />
+                <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.person_data_of_birth.$error.required && psn.submitted">This field is required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-spacing">
+          <div class="row">
+            <div class="form-group">
+
+              <div class="col-sm-4">
+                <input autocomplete="off" id="phoneNum" name="person_primary_phone" class="form-control" placeholder="Primary Phone" type="text" ng-model="psn.personalinfoForm.primary_phone" ui-mask-placeholder="" ui-mask="(999) 999-9999" required />
+                <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.person_primary_phone.$error.required && psn.submitted">This field is required</span>
+              </div>
+
+              <div class="col-sm-4">
+                <input autocomplete="off" id="altPhoneNum" name="person_alt_phone" class="form-control" placeholder="Alternate Phone" type="text" ui-mask-placeholder="" ui-mask="(999) 999-9999" ng-model="psn.personalinfoForm.alt_phone" required />
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="field-spacing">
+          <div class="row">
+            <div class="col-sm-8">
+              Have you invested with us before?
+              <input type="checkbox" name="vehicle" value="Car">
+            </div>
+            <div class="col-sm-4">
+              <input class="form-control" id="examplecostomerid" type="text" name="person_costomer_id" placeholder="Costomer Id" autocomplete="off" />
+            </div>
+          </div>
+        </div> -->
+
+        <div class="field-spacing">
+          <div class="row">
+            <div class="col-sm-5">
+
+              <div class="address-head-fix">Residential Address</div>
+              <div class="field-spacing extra-spacing-address">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input class="form-control" id="exampleaddress1" type="text" name="r_person_address1" placeholder="Address 1" autocomplete="off" ng-model="psn.personalinfoForm.address1" required />
+                      <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.r_person_address1.$error.required && psn.submitted">This field is required</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-spacing">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input class="form-control" id="exampleaddress2" type="text" name="r_person_address2" placeholder="Address 2" autocomplete="off" ng-model="psn.personalinfoForm.address2" required />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-spacing">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input class="form-control" id="examplezip" type="text" name="r_person_zip_code" placeholder="Zip" autocomplete="off" ng-model="psn.personalinfoForm.zipcode" ng-change="psn.getCityInfo();" required />
+                      <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.r_person_zip_code.$error.required && psn.submitted">This field is required</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-spacing">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input class="form-control" id="examplecity" type="text" name="r_person_city" placeholder="City" autocomplete="off" ng-model="psn.personalinfoForm.city" required/>
+                      <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.r_person_city.$error.required && psn.submitted">This field is required</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-spacing">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input class="form-control" id="examplestate" type="text" name="r_person_state" placeholder="State" autocomplete="off" ng-model="psn.personalinfoForm.state" required />
+                      <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.r_person_state.$error.required && psn.submitted">This field is required</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-5">
+
+              <div class="address-head-fix">Mailing Address (Is mailing address same as residential?)
+              <input type="checkbox" name="status" ng-model="psn.checkedStatus" ng-click="psn.sameAsAddress(psn.checkedStatus);">
+              </div>
+
+              <div class="field-spacing">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input class="form-control" id="exampleaddress1" type="text" name="person_address1" placeholder="Address 1" autocomplete="off" ng-model="psn.personalinfoForm.mailingAddress.address1" ng-disabled="psn.checkedStatus" required />
+                      <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.person_zip_code.$error.required && psn.submitted">This field is required</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-spacing">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input class="form-control" id="exampleaddress2" type="text" name="person_address2" placeholder="Address 2" autocomplete="off" ng-model="psn.personalinfoForm.mailingAddress.address2" ng-disabled="psn.checkedStatus" required />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-spacing">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input class="form-control" id="examplezip" type="text" name="person_zip_code" placeholder="Zip" autocomplete="off" ng-model="psn.personalinfoForm.mailingAddress.zipcode" ng-disabled="psn.checkedStatus" required />
+                      <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.person_zip_code.$error.required && psn.submitted">This field is required</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-spacing">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input class="form-control" id="examplecity" type="text" name="person_city" placeholder="City" autocomplete="off" ng-model="psn.personalinfoForm.mailingAddress.city" ng-disabled="psn.checkedStatus" required />
+                      <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.person_city.$error.required && psn.submitted">This field is required</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-spacing">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input class="form-control" id="examplestate" type="text" name="person_state" placeholder="State" autocomplete="off" ng-model="psn.personalinfoForm.mailingAddress.state" ng-disabled="psn.checkedStatus" required />
+                      <span class="text-danger" ng-show="PersonalCtrl.personalinfoForm.person_state.$error.required && psn.submitted">This field is required</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="field-spacing">
+          <div class="row">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <label>
+                  <input type="checkbox" required="" name="account_agreed" ng-model="psn.personalinfoForm.agreed" />
+                  <span></span>I agree with the <a href="">terms</a>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-danger" ng-show="!psn.personalinfoForm.agreed && psn.submitted">You must agree the terms
+        </div>
+
+
+        <div class="field-spacing">
+          <button class="btn btn-block btn-primary mt-lg" type="submit">Submit</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

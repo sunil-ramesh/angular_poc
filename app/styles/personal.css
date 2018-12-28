@@ -1,0 +1,17 @@
+.personal-head-text {
+  font-size: 20px;
+  text-align: center;
+}
+.margin-botton-personal {
+  margin-top: 50px;
+}
+.field-spacing {
+  margin-top: 25px;
+}
+.address-head-fix {
+  /*text-align: left;*/
+  font-size: 15px;
+}
+.extra-spacing-address {
+  margin-top: 50px;
+}

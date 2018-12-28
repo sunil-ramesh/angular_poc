@@ -1,0 +1,34 @@
+<nav class="navbar navbar-default nav-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">FEEDS</a>
+    </div>
+  </div>
+</nav>
+
+<div class="block-center mt-xl wd-xl">
+  <flash-message name="flash-fixed"></flash-message>
+  <div class="panel panel-dark panel-flat">
+    <div class="panel-body">
+      <p ng-if=registrationSuccess class="text-success"> An email with a confirmation link has been sent to your email address. To complete your registration, please open the link. </p>
+      <p class="text-center pv">CREATE USER</p>
+      <p class="text-center text-success" ng-show="user.successMsg">{{user.successMsg}}</p>
+      <p class="text-center text-danger" ng-show="user.authMsg">{{user.authMsg}}</p>
+      <form class="form-validate mb-lg" role="form" ng-submit="user.create_user()" name="user.userForm" novalidate="">
+        <div class="form-group has-feedback">
+          <label class="text-muted">Name</label>
+          <input class="form-control" id="InputName" type="text" name="user_name" placeholder="Name" ng-model="user.userForm.name" required="" />
+        </div>
+        <div class="form-group has-feedback">
+          <label class="text-muted">OCCUPATION</label>
+          <input class="form-control" id="InputOccupation" type="text" name="user_occupation" placeholder="OCCUPATION" ng-model="user.userForm.occupation" required="" />
+        </div>
+        <div class="form-group has-feedback">
+          <label class="text-muted">GENDER</label>
+          <input class="form-control" id="exampleInputGender" type="text" name="user_gender" placeholder="GENDER" ng-model="user.userForm.gender" required="" />
+        </div>
+        <button class="btn btn-block btn-primary mt-lg" type="submit">CREATE USER</button>
+      </form>
+    </div>
+  </div>
+</div>

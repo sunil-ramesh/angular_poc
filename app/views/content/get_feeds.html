@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default nav-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">FEEDS</a>
+    </div>
+  </div>
+</nav>
+
+<div class="block-center mt-xl wd-xl">
+  <flash-message name="flash-fixed"></flash-message>
+  <div class="panel panel-dark panel-flat">
+    <div class="panel-body">
+      <p class="text-center text-success" ng-show="gtf.successMsg">{{gtf.successMsg}}</p>
+      <p class="text-center text-danger" ng-show="gtf.authMsg">{{gtf.authMsg}}</p>
+      <form class="form-validate mb-lg" role="form" ng-submit="gtf.get_feeds()" name="gtf.getFeedsForm" novalidate="">
+        <button class="btn btn-block btn-primary mt-lg" type="submit">GET FEEDS</button>
+      </form>
+    </div>
+    <div class="card">
+      <div class="container">
+        <div ng-repeat="act in gtf.acts">
+          <div>Name : {{act.actor}}<div>
+          <div>Tweet : {{act.tweet}}<div><br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
